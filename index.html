@@ -1147,7 +1147,7 @@
                         </div>
                         <div>
                             <h4>WhatsApp</h4>
-                            <a href="https://wa.me/5535998572372 class="btn" style="margin-top: 10px;">
+                            <a href="https://wa.me/553598572372 class="btn" style="margin-top: 10px;">
                                 <i class="fab fa-whatsapp"></i> Enviar Mensagem
                             </a>
                         </div>
@@ -1518,13 +1518,50 @@
         
         function confirmPayment() {
             closeModal();
-            addMessage('Obrigado pelo pagamento! Estamos processando sua solicitação. Em breve enviaremos um e-mail de confirmação.', 'bot');
             
-            // Simular confirmação de pagamento
+            // Mensagem de confirmação de pagamento
+            addMessage('Obrigado pelo pagamento! Estamos processando sua solicitação.', 'bot');
+            
+            // Mensagem solicitando comprovante e arquivo
             setTimeout(() => {
-                addMessage('Seu pagamento foi confirmado! O prazo para entrega do seu TCC formatado começa agora. Alguma outra dúvida?', 'bot', ['Acompanhar pedido', 'Falar com atendente', 'Não, obrigado']);
-            }, 3000);
+                const whatsappLink = 'https://wa.me/553598572372?text=Olá,%20segue%20o%20comprovante%20do%20pagamento%20e%20o%20arquivo%20do%20meu%20TCC';
+                
+                addMessage('Para finalizar, por favor envie:', 'bot');
+                addMessage('1️⃣ O comprovante do pagamento<br>2️⃣ O arquivo do seu TCC', 'bot');
+                
+                // Criar botão de WhatsApp
+                const whatsappBtn = document.createElement('a');
+                whatsappBtn.href = whatsappLink;
+                whatsappBtn.className = 'btn';
+                whatsappBtn.style.marginTop = '10px';
+                whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Enviar no WhatsApp';
+                whatsappBtn.target = '_blank';
+                
+                // Criar div para a mensagem com o botão
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', 'bot-message');
+                messageDiv.innerHTML = 'Clique no botão abaixo para enviar diretamente pelo WhatsApp:';
+                messageDiv.appendChild(whatsappBtn);
+                
+                chatbotMessages.appendChild(messageDiv);
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                
+                // Adicionar lembretes periódicos
+                let reminderCount = 0;
+                const reminderInterval = setInterval(() => {
+                    reminderCount++;
+                    if (reminderCount <= 2) { // Limitar a 2 lembretes
+                        setTimeout(() => {
+                            addMessage(`Lembrete ${reminderCount}: Não esqueça de enviar o comprovante e o arquivo do TCC para iniciarmos o trabalho.`, 'bot');
+                        }, reminderCount * 60000); // 1 minuto entre lembretes
+                    } else {
+                        clearInterval(reminderInterval);
+                    }
+                }, 60000); // Verificar a cada minuto
+                
+            }, 2000);
         }
+
         
         // Contador regressivo para pagamento
         function startCountdown(duration, display) {
