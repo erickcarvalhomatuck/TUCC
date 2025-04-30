@@ -1329,7 +1329,18 @@
                 menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
-        
+
+        // Bloqueio inspesão code
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'F12' || 
+              (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+              (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+              (e.ctrlKey && e.key === 'U')) {
+            e.preventDefault();
+            alert('Inspeção desativada nesta página');
+          }
+        });
+    
         // Smooth scrolling para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -1607,7 +1618,7 @@
             document.getElementById('promoPopup').style.display = 'none';
         }
 
-        // Mostrar popup promocional após 3 segundos
+        // Mostrar popup promocional após 3 segundos // Para sempre seja louvado
         setTimeout(() => {
             // Verificar se já foi mostrado hoje (usando localStorage)
             const lastShown = localStorage.getItem('promoLastShown');
@@ -1621,3 +1632,5 @@
     </script>
 </body>
 </html>
+
+
