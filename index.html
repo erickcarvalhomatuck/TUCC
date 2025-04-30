@@ -1629,6 +1629,22 @@
                 localStorage.setItem('promoLastShown', today);
             }
         }, 3000);
+
+        // Garante o envio Netlify mesmo com JavaScript ativo
+        document.addEventListener('DOMContentLoaded', () => {
+          const form = document.querySelector('form[data-netlify="true"]');
+          if (form) {
+            form.addEventListener('submit', async (e) => {
+              const formData = new FormData(form);
+              await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+              });
+            });
+          }
+        });
+        
     </script>
 </body>
 </html>
