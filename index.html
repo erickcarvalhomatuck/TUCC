@@ -1449,6 +1449,11 @@
             else if (userMessage.includes('prazo') || userMessage.includes('tempo')) {
                 response = 'Nossos prazos de entrega são: 3 dias úteis para formatação padrão. Temos também opção urgente (24h) com acréscimo de 50%. Posso te explicar melhor?';
                 quickReplies = ['Quero urgente 24h', 'Contratar padrão (3 dias)', 'Ver preços'];
+                
+            if (userMessage.includes('format') || userMessage.includes('tcc')) {
+                response = 'Entendi que você quer formatar seu TCC. Antes de prosseguir, você tem um código de indicação? Nosso valor normal é R$200,00, mas com código você paga apenas R$150,00.';
+                quickReplies = ['Sim, tenho código', 'Não tenho código'];
+            } 
             }
             else if (userMessage.includes('atendente') || userMessage.includes('humano')) {
                 response = 'Claro! Estou te redirecionando para nosso WhatsApp oficial. Se o redirecionamento não funcionar automaticamente, <a href="https://wa.me/5511999999999" id="whatsapp-link" style="color: #25D366; font-weight: bold;">clique aqui</a>.';
