@@ -1451,13 +1451,16 @@
                 quickReplies = ['Quero urgente 24h', 'Contratar padrão (3 dias)', 'Ver preços'];
             }
             else if (userMessage.includes('atendente') || userMessage.includes('humano')) {
-                response = 'Claro! Estou transferindo você para um de nossos atendentes. Por favor, aguarde alguns instantes enquanto conectamos.';
+                response = 'Claro! Estou te redirecionando para nosso WhatsApp oficial. Se o redirecionamento não funcionar automaticamente, <a href="https://wa.me/5511999999999" id="whatsapp-link" style="color: #25D366; font-weight: bold;">clique aqui</a>.';
                 quickReplies = [];
                 
-                // Simular transferência
+                // Redirecionamento automático após 3 segundos
                 setTimeout(() => {
-                    addMessage('Você foi conectado com um atendente. Como podemos ajudar?', 'bot');
-                }, 2000);
+                    window.open('https://wa.me/553598616444', '_blank');
+                    
+                    // Mensagem de confirmação no chat
+                    addMessage('Você está sendo redirecionado para o WhatsApp...', 'bot');
+                }, 3000);
             }
             else {
                 response = 'Desculpe, não entendi. Poderia reformular ou escolher uma das opções abaixo?';
