@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T.U - TCC Urgente | Formatação de TCC em até 3 dias</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="icone.ico" type="image/x-icon">
+    <style>
+        /* Reset e Variáveis */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --text: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        /* Estilos Gerais */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+        }
+        
+        .btn-accent:hover {
+            background-color: #c0392b;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+        
+        #hero h1 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        #hero p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        /* About Section */
+        #about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Services Section */
+        #services {
+            background-color: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            background-color: var(--secondary);
+            color: white;
+            font-size: 2rem;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            color: var(--primary);
+        }
+        
+        /* Pricing Section */
+        #pricing {
+            background-color: white;
+        }
+        
+        .pricing-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            max-width: 400px;
+            margin: 50px auto 0;
+            position: relative;
+        }
+        
+        .pricing-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+        
+        .pricing-body {
+            padding: 30px;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .pricing-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features li i {
+            color: var(--success);
+            margin-right: 10px;
+        }
+        
+        .discount-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: var(--accent);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Testimonials Section */
+        #testimonials {
+            background-color: var(--light);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        .testimonial-rating {
+            color: #f1c40f;
+            margin-bottom: 15px;
+        }
+        
+        /* CTA Section */
+        #cta {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        #cta h2 {
+            color: white;
+        }
+        
+        #cta h2::after {
+            background-color: white;
+        }
+        
+        #cta p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Contact Section */
+        #contact {
+            background-color: white;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            margin-top: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            background-color: var(--light);
+            color: var(--secondary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Chatbot Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            z-index: 1000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .chatbot-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-body {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-top: none;
+            height: 400px;
+            display: none;
+            flex-direction: column;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 18px;
+            line-height: 1.4;
+            position: relative;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            background-color: #f1f1f1;
+            color: #333;
+            border-radius: 18px 18px 18px 4px;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 18px 18px 4px 18px;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #eee;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .chatbot-input button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .quick-reply {
+            background-color: #e1f5fe;
+            color: #0277bd;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            cursor: pointer;
+            border: none;
+        }
+
+        /* PIX Payment Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+
+        .pix-payment-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .pix-options {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pix-option {
+            padding: 10px 15px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .pix-option.active {
+            border-bottom: 2px solid var(--secondary);
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .pix-content {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .pix-content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .pix-code {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .pix-code input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .pix-code button {
+            padding: 10px 15px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .pix-timer {
+            text-align: center;
+            font-size: 1.1em;
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .payment-confirm {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Promo Popup Styles */
+        .promo-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .promo-content {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            animation: popIn 0.5s ease-out;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .promo-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .promo-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .promo-code {
+            background-color: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            margin: 20px 0;
+            display: inline-block;
+            font-weight: bold;
+            letter-spacing: 2px;
+            border: 2px dashed white;
+        }
+
+        .promo-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .promo-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .promo-winter-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #f1c40f;
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0;
+                transition: left 0.3s;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+
+            .chatbot-container {
+                width: 300px;
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chatbot-container {
+                width: calc(100% - 20px);
+                right: 10px;
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">T.<span>U</span></a>
+                <ul class="nav-links">
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#pricing">Preços</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <h1>Formatação de TCC em até 3 dias</h1>
+            <p>Nós formatamos seu trabalho acadêmico seguindo as normas ABNT ou o padrão da sua faculdade, garantindo qualidade, agilidade e tranquilidade para você focar no que realmente importa: o conteúdo.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn btn-accent">Solicitar Orçamento</a>
+                <a href="#pricing" class="btn">Ver Preços</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>Sobre o T.U</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>O T.U - TCC Urgente foi criado para ajudar estudantes que estão com dificuldades na formatação de seus trabalhos acadêmicos ou com prazos curtos para entrega.</p>
+                    <p>Nossa equipe é especializada em formatação seguindo as normas ABNT ou os padrões específicos da sua instituição de ensino, garantindo que seu trabalho esteja perfeito dentro do prazo necessário.</p>
+                    <p>Com anos de experiência no mercado acadêmico, entendemos as dores dos estudantes e oferecemos uma solução rápida, confiável e com excelente custo-benefício.</p>
+                    <a href="#services" class="btn">Nossos Serviços</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://i.ibb.co/0ySxkzB8/akram-huseyn-um-J4-PCS-r-EI-unsplash.jpg" alt="Estudante trabalhando no TCC">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <p class="text-center">Oferecemos soluções completas para sua necessidade acadêmica</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Formatação Completa</h3>
+                        <p>Formatamos seu TCC de acordo com as normas ABNT ou o padrão da sua faculdade, incluindo capa, sumário, referências, citações e todo o layout necessário.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Entrega Rápida</h3>
+                        <p>Entregamos seu trabalho formatado em até 3 dias úteis, garantindo que você não perca prazos importantes mesmo que tenha deixado para a última hora.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Revisão e Ajustes</h3>
+                        <p>Além da formatação, revisamos seu trabalho e sugerimos ajustes para garantir que esteja perfeito antes da entrega final ao orientador.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            <h2>Nossos Preços</h2>
+            <p class="text-center">Serviço de qualidade com preço acessível para estudantes</p>
+            <div class="pricing-card">
+                <div class="discount-badge">25% OFF com indicação</div>
+                <div class="pricing-header">
+                    <h3>Formatação Completa</h3>
+                    <div class="price">R$200<span>,00</span></div>
+                    <p>Preço normal</p>
+                </div>
+                <div class="pricing-body">
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Formatação ABNT ou padrão da faculdade</li>
+                        <li><i class="fas fa-check"></i> Entrega em até 3 dias úteis</li>
+                        <li><i class="fas fa-check"></i> Capa, sumário, referências e citações</li>
+                        <li><i class="fas fa-check"></i> Numeração de páginas e seções</li>
+                        <li><i class="fas fa-check"></i> Revisão e ajustes finais</li>
+                        <li><i class="fas fa-check"></i> Suporte até a aprovação</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-accent">Contratar Agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>O Que Dizem Nossos Clientes</h2>
+            <p class="text-center">Depoimentos de estudantes que já utilizaram nossos serviços</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente 1">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Ana Carolina</h4>
+                            <p>Direito - UFMG</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Salvaram meu TCC! Estava com o prazo estourando e não conseguia formatar corretamente. Em 2 dias meu trabalho estava perfeito e fui aprovada sem nenhuma observação!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Cliente 2">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Ricardo Almeida</h4>
+                            <p>Engenharia - Univas</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Não sabia nada sobre ABNT e estava perdido. O T.U não só formatou meu trabalho como me explicou cada detalhe. Indiquei para 3 amigos e todos ganharam desconto!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente 3">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Juliana Santos</h4>
+                            <p>Administração - PUC</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"Meu orientador sempre reclamava da formatação. Contratei o T.U e na próxima entrega ele elogiou! Finalmente pude focar apenas no conteúdo. Super recomendo!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta">
+        <div class="container">
+            <h2>Precisa de Ajuda com Seu TCC?</h2>
+            <p>Não deixe a formatação atrapalhar seu sucesso acadêmico. Nossa equipe está pronta para ajudar você a entregar um trabalho perfeito dentro do prazo.</p>
+            <a href="#contact" class="btn btn-accent">Fale Conosco Agora</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <p class="text-center">Envie sua mensagem ou fale conosco diretamente pelo WhatsApp</p>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Telefone/WhatsApp</h4>
+                            <p>(35) 99861-6444</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contact.tucc@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 12h</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/553598616444" class="btn" style="margin-top: 10px;">
+                                <i class="fab fa-whatsapp"></i> Enviar Mensagem
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="https://formsubmit.co/contact.tucc@gmail.com" method="POST">
+                        <!-- Campo honeypot para proteção contra spam -->
+                        <input type="text" name="_honey" style="display:none">
+                        
+                        <!-- Redirecionamento após envio -->
+                        <input type="hidden" name="_next" value="https://seusite.netlify.app/obrigado.html">
+                        
+                        <!-- Configurações adicionais -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        
+                        <div class="form-group">
+                            <label for="nome">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone/WhatsApp</label>
+                            <input type="tel" id="telefone" name="telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Detalhes do Seu Trabalho</label>
+                            <textarea id="mensagem" name="mensagem" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-accent">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>T.U - TCC Urgente</h3>
+                    <p>Soluções rápidas e confiáveis para formatação de trabalhos acadêmicos, ajudando estudantes a conquistarem seu diploma com tranquilidade.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#hero">Início</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#pricing">Preços</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Serviços</h3>
+                    <ul>
+                        <li><a href="#">Formatação ABNT</a></li>
+                        <li><a href="#">Formatação Personalizada</a></li>
+                        <li><a href="#">Revisão de Trabalhos</a></li>
+                        <li><a href="#">Normalização de Referências</a></li>
+                        <li><a href="#">Formatação Urgente</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 T.U - TCC Urgente. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-container">
+        <div class="chatbot-header" id="chatbotToggle">
+            <span>Assistente Virtual T.U</span>
+            <i class="fas fa-robot"></i>
+        </div>
+        <div class="chatbot-body" id="chatbotBody">
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    Olá! Sou o assistente virtual do T.U - TCC Urgente. Como posso te ajudar hoje?
+                    <div class="quick-replies">
+                        <button class="quick-reply" onclick="sendQuickReply(this)">Quero formatar meu TCC</button>
+                        <button class="quick-reply" onclick="sendQuickReply(this)">Preços e prazos</button>
+                        <button class="quick-reply" onclick="sendQuickReply(this)">Pagamento via PIX</button>
+                        <button class="quick-reply" onclick="sendQuickReply(this)">Falar com atendente</button>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="userInput" placeholder="Digite sua mensagem..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Pagamento PIX -->
+    <div id="pixModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="pix-payment-container">
+                <h3 id="pixAmountTitle">Pagamento via PIX - R$200,00</h3>
+                
+                <div class="pix-options">
+                    <div class="pix-option active" data-method="qr-code" onclick="showPixMethod('qr-code')">
+                        <i class="fas fa-qrcode"></i> QR Code
+                    </div>
+                    <div class="pix-option" data-method="copy-paste" onclick="showPixMethod('copy-paste')">
+                        <i class="fas fa-paste"></i> Copiar Código
+                    </div>
+                </div>
+                
+                <div class="pix-content" id="qr-code-content">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020126700014BR.GOV.BCB.PIX0122contact.tucc@gmail.com0222Serviço Formatação TCC5204000053039865406150.005802BR5921ERICK CARVALHO MATUCK6012POUSO ALEGRE62070503***63042860" alt="QR Code PIX">
+                    <p>Escaneie este QR Code com seu aplicativo bancário</p>
+                </div>
+                
+                <div class="pix-content hidden" id="copy-paste-content">
+                    <div class="pix-code">
+                        <input type="text" id="pix-key" value="00020126700014BR.GOV.BCB.PIX0122contact.tucc@gmail.com0222Serviço Formatação TCC5204000053039865406150.005802BR5921ERICK CARVALHO MATUCK6012POUSO ALEGRE62070503***63042860" readonly>
+                        <button onclick="copyPixCode()">Copiar</button>
+                    </div>
+                    <p>Cole este código no seu aplicativo bancário</p>
+                </div>
+                
+                <div class="pix-timer">
+                    <p>Tempo restante: <span id="countdown">30:00</span></p>
+                </div>
+                
+                <div class="payment-confirm">
+                    <p>Após realizar o pagamento, clique no botão abaixo:</p>
+                    <button class="btn" onclick="confirmPayment()">Já paguei</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Promocional -->
+    <div class="promo-popup" id="promoPopup">
+        <div class="promo-content">
+            <span class="promo-close" onclick="closePromo()">&times;</span>
+            <div class="promo-winter-icon">
+                <i class="fas fa-snowflake"></i>
+            </div>
+            <h2 class="promo-title">PROMOÇÃO DE INVERNO</h2>
+            <p>Desconto especial de 25% na formatação do seu TCC!</p>
+            <p>Use o código abaixo para garantir seu desconto:</p>
+            <div class="promo-code">#TUTUOFF25</div>
+            <p>Válido até 31/08/2023</p>
+            <button class="promo-btn" onclick="closePromo()">Entendi, obrigado!</button>
+        </div>
+    </div>
+
+    <script>
+        // Menu Mobile
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Bloqueio inspesão code
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'F12' || 
+              (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+              (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+              (e.ctrlKey && e.key === 'U')) {
+            e.preventDefault();
+            alert('Inspeção desativada nesta página');
+          }
+        });
+    
+        // Smooth scrolling para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Chatbot Functionality
+        const chatbotToggle = document.getElementById('chatbotToggle');
+        const chatbotBody = document.getElementById('chatbotBody');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const userInput = document.getElementById('userInput');
+        
+        let chatOpen = false;
+        let hasDiscount = false;
+        
+        // Alternar visibilidade do chat
+        chatbotToggle.addEventListener('click', () => {
+            chatOpen = !chatOpen;
+            chatbotBody.style.display = chatOpen ? 'flex' : 'none';
+            if (chatOpen) {
+                setTimeout(() => {
+                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                }, 100);
+            }
+        });
+        
+        // Enviar mensagem
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message === '') return;
+            
+            addMessage(message, 'user');
+            userInput.value = '';
+            
+            // Simular resposta do bot após 1 segundo
+            setTimeout(() => {
+                botResponse(message);
+            }, 1000);
+        }
+        
+        // Resposta do bot
+        function botResponse(userMessage) {
+            userMessage = userMessage.toLowerCase();
+            let response = '';
+            let quickReplies = [];
+            
+            if (userMessage.includes('format') || userMessage.includes('tcc')) {
+                response = 'Entendi que você quer formatar seu TCC. Antes de prosseguir, você tem um código de indicação? Nosso valor normal é R$200,00, mas com código você paga apenas R$150,00.';
+                quickReplies = ['Sim, tenho código', 'Não tenho código'];
+            } 
+            else if (userMessage.includes('sim') && (userMessage.includes('código') || userMessage.includes('codigo'))) {
+                response = 'Ótimo! Por favor, digite seu código de indicação (como #TUTUOFF25) para que eu possa aplicar seu desconto de 25%.';
+                // Não adiciona quick replies aqui para forçar o usuário a digitar
+            }
+            else if (userMessage.includes('#tutoff25') || userMessage.includes('#tutuoff25')) {
+                hasDiscount = true;
+                response = 'Código #TUTUOFF25 aceito! Você ganhou 25% de desconto. O valor do serviço será R$150,00 em vez de R$200,00. Posso gerar o QR Code para pagamento agora?';
+                quickReplies = ['Sim, gerar PIX', 'Ainda não'];
+            }
+            else if (userMessage.includes('não') || userMessage.includes('nao') || userMessage.includes('n tenho')) {
+                hasDiscount = false;
+                response = 'Sem problemas! O valor normal do serviço é R$200,00. Se algum amigo já usou nosso serviço, peça a ele o código de indicação para ganhar 25% de desconto. Posso gerar o QR Code para pagamento agora?';
+                quickReplies = ['Sim, gerar PIX', 'Ainda não'];
+            }
+            else if (userMessage.includes('pagamento') || userMessage.includes('pix') || userMessage.includes('pagar') || userMessage.includes('gerar')) {
+                const amount = hasDiscount ? '150,00' : '200,00';
+                response = `Ótimo! O valor total é R$${amount}. Vou gerar o QR Code PIX para você. Por favor, realize o pagamento em até 30 minutos para garantir seu pedido.`;
+                
+                // Mostrar modal de pagamento
+                setTimeout(() => {
+                    openPixModal(hasDiscount);
+                }, 1500);
+            }
+            else if (userMessage.includes('prazo') || userMessage.includes('tempo')) {
+                response = 'Nossos prazos de entrega são: 3 dias úteis para formatação padrão. Temos também opção urgente (24h) com acréscimo de 50%. Posso te explicar melhor?';
+                quickReplies = ['Quero urgente 24h', 'Contratar padrão (3 dias)', 'Ver preços'];
+            }
+            else if (userMessage.includes('atendente') || userMessage.includes('humano')) {
+                response = 'Claro! Estou te redirecionando para nosso WhatsApp oficial. Se o redirecionamento não funcionar automaticamente, <a href="https://wa.me/553598616444" id="whatsapp-link" style="color: #25D366; font-weight: bold;">clique aqui</a>.';
+                quickReplies = [];
+                
+                // Redirecionamento automático após 3 segundos
+                setTimeout(() => {
+                    window.open('https://wa.me/553598616444', '_blank');
+                    
+                    // Mensagem de confirmação no chat
+                    addMessage('Você está sendo redirecionado para o WhatsApp...', 'bot');
+                }, 3000);
+            }
+            else {
+                response = 'Desculpe, não entendi. Poderia reformular ou escolher uma das opções abaixo?';
+                quickReplies = ['Quero formatar meu TCC', 'Preços e prazos', 'Pagamento via PIX', 'Falar com atendente'];
+            }
+            
+            addMessage(response, 'bot', quickReplies);
+        }
+        
+        // Adicionar mensagem ao chat
+        function addMessage(text, sender, quickReplies = []) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', `${sender}-message`);
+            messageDiv.innerHTML = text;
+            
+            if (quickReplies.length > 0) {
+                const qrDiv = document.createElement('div');
+                qrDiv.classList.add('quick-replies');
+                
+                quickReplies.forEach(reply => {
+                    const button = document.createElement('button');
+                    button.classList.add('quick-reply');
+                    button.textContent = reply;
+                    button.onclick = function() { sendQuickReply(this); };
+                    qrDiv.appendChild(button);
+                });
+                
+                messageDiv.appendChild(qrDiv);
+            }
+            
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+        
+        // Enviar resposta rápida
+        function sendQuickReply(button) {
+            const replyText = button.textContent;
+            addMessage(replyText, 'user');
+            
+            setTimeout(() => {
+                botResponse(replyText);
+            }, 1000);
+        }
+        
+        // Enviar mensagem com Enter
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        }
+        
+        // Sistema de Pagamento PIX
+        function openPixModal(withDiscount = false) {
+            const amount = withDiscount ? '150,00' : '200,00';
+            document.getElementById('pixAmountTitle').textContent = `Pagamento via PIX - R$${amount}`;
+            document.getElementById('pixModal').style.display = 'block';
+            startCountdown(30 * 60, document.getElementById('countdown'));
+        }
+        
+        function closeModal() {
+            document.getElementById('pixModal').style.display = 'none';
+        }
+        
+        function showPixMethod(method) {
+            document.querySelectorAll('.pix-option').forEach(opt => opt.classList.remove('active'));
+            document.querySelector(`.pix-option[data-method="${method}"]`).classList.add('active');
+            
+            document.querySelectorAll('.pix-content').forEach(content => content.classList.add('hidden'));
+            document.getElementById(`${method}-content`).classList.remove('hidden');
+        }
+        
+        function copyPixCode() {
+            const copyText = document.getElementById("pix-key");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            
+            addMessage('Código PIX copiado! Cole no seu aplicativo de pagamentos.', 'bot');
+        }
+        
+        function confirmPayment() {
+            closeModal();
+            
+            // Mensagem de confirmação de pagamento
+            addMessage('Obrigado pelo pagamento! Estamos processando sua solicitação.', 'bot');
+            
+            // Mensagem solicitando comprovante e arquivo
+            setTimeout(() => {
+                const whatsappLink = 'https://wa.me/553598616444?text=Olá,%20segue%20o%20comprovante%20do%20pagamento%20e%20o%20arquivo%20do%20meu%20TCC';
+                
+                addMessage('Para finalizar, por favor envie:', 'bot');
+                addMessage('1️⃣ O comprovante do pagamento<br>2️⃣ O arquivo do seu TCC', 'bot');
+                
+                // Criar botão de WhatsApp
+                const whatsappBtn = document.createElement('a');
+                whatsappBtn.href = whatsappLink;
+                whatsappBtn.className = 'btn';
+                whatsappBtn.style.marginTop = '10px';
+                whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Enviar no WhatsApp';
+                whatsappBtn.target = '_blank';
+                
+                // Criar div para a mensagem com o botão
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', 'bot-message');
+                messageDiv.innerHTML = 'Clique no botão abaixo para enviar diretamente pelo WhatsApp:';
+                messageDiv.appendChild(whatsappBtn);
+                
+                chatbotMessages.appendChild(messageDiv);
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                
+                // Adicionar lembretes periódicos
+                let reminderCount = 0;
+                const reminderInterval = setInterval(() => {
+                    reminderCount++;
+                    if (reminderCount <= 2) { // Limitar a 2 lembretes
+                        setTimeout(() => {
+                            addMessage(`Lembrete ${reminderCount}: Não esqueça de enviar o comprovante e o arquivo do TCC para iniciarmos o trabalho.`, 'bot');
+                        }, reminderCount * 60000); // 1 minuto entre lembretes
+                    } else {
+                        clearInterval(reminderInterval);
+                    }
+                }, 60000); // Verificar a cada minuto
+                
+            }, 2000);
+        }
+
+        
+        // Contador regressivo para pagamento
+        function startCountdown(duration, display) {
+            let timer = duration, minutes, seconds;
+            const interval = setInterval(function() {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                
+                display.textContent = minutes + ":" + seconds;
+                
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    display.textContent = "Expirado";
+                    addMessage('Parece que o tempo para pagamento expirou. Quer que eu gere um novo QR Code?', 'bot', ['Sim, gerar novo', 'Não, obrigado']);
+                }
+            }, 1000);
+        }
+        
+        // Fechar modal ao clicar fora
+        window.onclick = function(event) {
+            const modal = document.getElementById('pixModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Promo Popup
+        function closePromo() {
+            document.getElementById('promoPopup').style.display = 'none';
+        }
+
+        // Mostrar popup promocional após 3 segundos
+        setTimeout(() => {
+            // Verificar se já foi mostrado hoje (usando localStorage)
+            const lastShown = localStorage.getItem('promoLastShown');
+            const today = new Date().toDateString();
+            
+            if (!lastShown || lastShown !== today) {
+                document.getElementById('promoPopup').style.display = 'flex';
+                localStorage.setItem('promoLastShown', today);
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
