@@ -1147,24 +1147,23 @@
                         </div>
                         <div>
                             <h4>WhatsApp</h4>
-                            <a href="https://wa.me/553598616444" class="btn" style="margin-top: 10px;>
+                            <a href="https://wa.me/553598616444" class="btn" style="margin-top: 10px;">
                                 <i class="fab fa-whatsapp"></i> Enviar Mensagem
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form 
-                        id="form-contato" 
-                        name="contato" 
-                        method="POST" 
-                        data-netlify="true" 
-                        netlify-honeypot="bot-field"
-                    >
-                        <!-- Campo honeypot para proteção contra spam (deve ficar oculto) -->
-                        <div class="hidden">
-                            <label>Não preencha este campo se for humano: <input name="bot-field"></label>
-                        </div>
+                    <form action="https://formsubmit.co/contact.tucc@gmail.com" method="POST">
+                        <!-- Campo honeypot para proteção contra spam -->
+                        <input type="text" name="_honey" style="display:none">
+                        
+                        <!-- Redirecionamento após envio -->
+                        <input type="hidden" name="_next" value="https://seusite.netlify.app/obrigado.html">
+                        
+                        <!-- Configurações adicionais -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
                         
                         <div class="form-group">
                             <label for="nome">Nome Completo</label>
@@ -1359,26 +1358,6 @@
             });
         });
         
-        // Formulário de contato
-        const contactForm = document.getElementById('form-contato');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-                contactForm.reset();
-            });
-        }
-        
-        // Adiciona classe ativa ao header quando scrollar
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = 'none';
-            }
-        });
-
         // Chatbot Functionality
         const chatbotToggle = document.getElementById('chatbotToggle');
         const chatbotBody = document.getElementById('chatbotBody');
@@ -1449,14 +1428,9 @@
             else if (userMessage.includes('prazo') || userMessage.includes('tempo')) {
                 response = 'Nossos prazos de entrega são: 3 dias úteis para formatação padrão. Temos também opção urgente (24h) com acréscimo de 50%. Posso te explicar melhor?';
                 quickReplies = ['Quero urgente 24h', 'Contratar padrão (3 dias)', 'Ver preços'];
-                
-            if (userMessage.includes('format') || userMessage.includes('tcc')) {
-                response = 'Entendi que você quer formatar seu TCC. Antes de prosseguir, você tem um código de indicação? Nosso valor normal é R$200,00, mas com código você paga apenas R$150,00.';
-                quickReplies = ['Sim, tenho código', 'Não tenho código'];
-            } 
             }
             else if (userMessage.includes('atendente') || userMessage.includes('humano')) {
-                response = 'Claro! Estou te redirecionando para nosso WhatsApp oficial. Se o redirecionamento não funcionar automaticamente, <a href="https://wa.me/5511999999999" id="whatsapp-link" style="color: #25D366; font-weight: bold;">clique aqui</a>.';
+                response = 'Claro! Estou te redirecionando para nosso WhatsApp oficial. Se o redirecionamento não funcionar automaticamente, <a href="https://wa.me/553598616444" id="whatsapp-link" style="color: #25D366; font-weight: bold;">clique aqui</a>.';
                 quickReplies = [];
                 
                 // Redirecionamento automático após 3 segundos
@@ -1626,7 +1600,7 @@
             document.getElementById('promoPopup').style.display = 'none';
         }
 
-        // Mostrar popup promocional após 3 segundos // Para sempre seja louvado
+        // Mostrar popup promocional após 3 segundos
         setTimeout(() => {
             // Verificar se já foi mostrado hoje (usando localStorage)
             const lastShown = localStorage.getItem('promoLastShown');
@@ -1637,23 +1611,6 @@
                 localStorage.setItem('promoLastShown', today);
             }
         }, 3000);
-
-        // Garante o envio Netlify mesmo com JavaScript ativo
-        document.addEventListener('DOMContentLoaded', () => {
-          const form = document.querySelector('form[data-netlify="true"]');
-          if (form) {
-            form.addEventListener('submit', async (e) => {
-              const formData = new FormData(form);
-              await fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData).toString()
-              });
-            });
-          }
-        });
-        
     </script>
 </body>
 </html>
-
