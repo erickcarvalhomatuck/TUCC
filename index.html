@@ -1157,9 +1157,7 @@
                     <form action="https://formsubmit.co/a16dcd1787923f9330547b2cb63f03de" method="POST">
                         <!-- Campo honeypot para proteção contra spam -->
                         <input type="text" name="_honey" style="display:none">
-                        
-                        <!-- Redirecionamento após envio -->
-                        <input type="hidden" name="_next" value="https://seusite.netlify.app/obrigado.html">
+
                         
                         <!-- Configurações adicionais -->
                         <input type="hidden" name="_captcha" value="false">
@@ -1611,6 +1609,34 @@
                 localStorage.setItem('promoLastShown', today);
             }
         }, 3000);
+
+        // Formulário de contato
+        const contactForm = document.getElementById('form-contato');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Mostra o alerta
+                alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+                
+                // Envia o formulário via FormSubmit
+                fetch(this.action, {
+                    method: this.method,
+                    body: new FormData(this),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    // Limpa o formulário após o envio
+                    this.reset();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        }        
+        
     </script>
 </body>
 </html>
